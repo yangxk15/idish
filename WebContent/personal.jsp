@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
   <head>
     <title>PERSONAL</title>
@@ -44,42 +44,9 @@
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
-      function check() {
-    	  var user = "${sessionScope.user}";
-    	  if (user == "") {
-    		  alert("Please login first!");
-        	  location.href='home.jsp'; 
-    		  return;
-    	  }
-          document.getElementById("u5_img").src = "images/users/" + "${user.userid}" + ".png";
-          if ("${user.kitchen[0]}" == "") {
-        	  document.getElementById("p0").href = "javascript:void(0)";
-          }
-          else {
-        	  document.getElementById("u17_img").src = "images/recipes/" + "${recipelist[user.kitchen[0]].recipeid}" + ".png";
-        	  document.getElementById("u19").style.opacity = "0.75";
-          }
-          if ("${user.kitchen[1]}" == "") {
-        	  document.getElementById("p1").href = "javascript:void(0)";
-          }
-          else {
-        	  document.getElementById("u25_img").src = "images/recipes/" + "${recipelist[user.kitchen[1]].recipeid}" + ".png";
-        	  document.getElementById("u27").style.opacity = "0.75";
-          }
-          if ("${user.kitchen[2]}" == "") {
-        	  document.getElementById("p2").href = "javascript:void(0)";
-          }
-          else {
-        	  document.getElementById("u33_img").src = "images/recipes/" + "${recipelist[user.kitchen[2]].recipeid}" + ".png";
-        	  document.getElementById("u35").style.opacity = "0.75";
-          }
-          if ("${requestScope.upload}" == "true") {
-        	  alert("Upload Succeeded!")
-          }
-      }
     </script>
   </head>
-  <body onload="check()">
+  <body>
     <div id="base" class="">
 
       <!-- Unnamed (Shape) -->
@@ -91,360 +58,361 @@
         </div>
       </div>
 
-      <!-- Unnamed (Shape) -->
-      <div id="u2" class="ax_shape">
-        <img id="u2_img" class="img " src="images/home/u62.png"/>
+      <!-- back2 (Shape) -->
+      <div id="u2" class="ax_shape" data-label="back2">
+        <img id="u2_img" class="img " src="images/personal/back2_u2.png"/>
         <!-- Unnamed () -->
         <div id="u3" class="text">
           <p><span></span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Text Field) -->
-      <div id="u4" class="ax_text_field">
-        <input id="u4_input" type="text" value=""/>
-      </div>
-
-      <!-- Unnamed (Image) -->
-      <div id="u5" class="ax_image">
-        <a href="personal.jsp"><img id="u5_img" class="img " src="images/personal/u5.png"/></a>
+      <!-- back1 (Shape) -->
+      <div id="u4" class="ax_shape" data-label="back1">
+        <img id="u4_img" class="img " src="images/personal/back1_u4.png"/>
         <!-- Unnamed () -->
-        <div id="u6" class="text">
+        <div id="u5" class="text">
           <p><span></span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Image) -->
-      <div id="u7" class="ax_image">
-        <img id="u7_img" class="img " src="images/home/u79.png"/>
+      <!-- uploadFrame (Inline Frame) -->
+      <div id="u6" class="ax_inline_frame" data-label="uploadFrame">
+        <iframe id="u6_input" data-label="uploadFrame" scrolling="auto" frameborder="0"></iframe>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u7" class="ax_shape">
+        <img id="u7_img" class="img " src="images/home/u62.png"/>
         <!-- Unnamed () -->
         <div id="u8" class="text">
           <p><span></span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Shape) -->
-      <div id="u9" class="ax_paragraph">
-        <img id="u9_img" class="img " src="resources/images/transparent.gif"/>
+      <!-- Unnamed (Text Field) -->
+      <div id="u9" class="ax_text_field">
+        <input id="u9_input" type="text" value=""/>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u10" class="ax_image">
+        <img id="u10_img" class="img " src="images/personal/u10.png"/>
         <!-- Unnamed () -->
-        <div id="u10" class="text">
-          <p><span>${user.realname}'s Kitchen</span></p>
+        <div id="u11" class="text">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Image) -->
+      <div id="u12" class="ax_image">
+        <img id="u12_img" class="img " src="images/home/u79.png"/>
+        <!-- Unnamed () -->
+        <div id="u13" class="text">
+          <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u11" class="ax_shape">
-        <a href="upload.jsp"><img id="u11_img" class="img " src="images/recipe/u8.png"/></a>
+      <div id="u14" class="ax_paragraph">
+        <img id="u14_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u12" class="text">
-          <p><span><a href="upload.jsp" style='text-decoration: none'>PUBLISH</a></span></p>
+        <div id="u15" class="text">
+          <p><span>Jun's Kitchen</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u13" class="ax_paragraph">
-        <img id="u13_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u16" class="ax_shape" title="follow this person">
+        <img id="u16_img" class="img " src="images/recipe/u8.png"/>
         <!-- Unnamed () -->
-        <div id="u14" class="text">
+        <div id="u17" class="text">
+          <p><span>FOLLOW</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u18" class="ax_paragraph">
+        <img id="u18_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u19" class="text">
           <p style="font-size:28px;"><span style="font-size:28px;">2.4k</span></p><p style="font-size:10px;"><span style="font-size:10px;">FOLLOWER</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u15" class="ax_paragraph">
-        <img id="u15_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u20" class="ax_paragraph">
+        <img id="u20_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u16" class="text">
+        <div id="u21" class="text">
           <p style="font-size:28px;"><span style="font-size:28px;">75</span></p><p style="font-size:10px;"><span style="font-size:10px;">RECIPES</span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Image) -->
-      <div id="u17" class="ax_image" >
-        <a id="p0" href="recipe.jsp?id=${recipelist[user.kitchen[0]].recipeid }"><img id="u17_img" class="img " src="images/recipe/u37.png"/></a>
+      <!-- Unnamed (Shape) -->
+      <div id="u22" class="ax_shape">
+        <img id="u22_img" class="img " src="images/personal/u22.png"/>
         <!-- Unnamed () -->
-        <div id="u18" class="text">
+        <div id="u23" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u19" class="ax_shape" style="opacity:0">
-        <img id="u19_img" class="img " src="images/personal/u19.png"/>
+      <div id="u24" class="ax_h2">
+        <img id="u24_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u20" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u21" class="ax_paragraph">
-        <img id="u21_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u22" class="text">
-          <p><span>${recipelist[user.kitchen[0]].description}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u23" class="ax_h2">
-        <img id="u23_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u24" class="text">
-          <p><span>${recipelist[user.kitchen[0]].name}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Image) -->
-      <div id="u25" class="ax_image">
-        <a id="p1" href="recipe.jsp?id=${recipelist[user.kitchen[1]].recipeid }"><img id="u25_img" class="img " src="images/recipe/u37.png"/></a>
-        <!-- Unnamed () -->
-        <div id="u26" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u27" class="ax_shape" style="opacity:0">
-        <img id="u27_img" class="img " src="images/personal/u19.png"/>
-        <!-- Unnamed () -->
-        <div id="u28" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u29" class="ax_paragraph">
-        <img id="u29_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u30" class="text">
-          <p><span>${recipelist[user.kitchen[1]].description}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u31" class="ax_h2">
-        <img id="u31_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u32" class="text">
-          <p><span style="font-family:'AppleGothic', 'AppleGothic';font-weight:400;">${recipelist[user.kitchen[1]].name}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Image) -->
-      <div id="u33" class="ax_image">
-        <a id="p2" href="recipe.jsp?id=${recipelist[user.kitchen[2]].recipeid }"><img id="u33_img" class="img " src="images/recipe/u37.png"/></a>
-        <!-- Unnamed () -->
-        <div id="u34" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u35" class="ax_shape" style="opacity:0">
-        <img id="u35_img" class="img " src="images/personal/u19.png"/>
-        <!-- Unnamed () -->
-        <div id="u36" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u37" class="ax_paragraph">
-        <img id="u37_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u38" class="text">
-          <p><span>${recipelist[user.kitchen[2]].description}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u39" class="ax_h2">
-        <img id="u39_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u40" class="text">
-          <p><span>${recipelist[user.kitchen[2]].name}</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u41" class="ax_shape">
-        <img id="u41_img" class="img " src="images/personal/u41.png"/>
-        <!-- Unnamed () -->
-        <div id="u42" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u43" class="ax_h2">
-        <img id="u43_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u44" class="text">
+        <div id="u25" class="text">
           <p><span>Sort</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u45" class="ax_shape">
-        <img id="u45_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u26" class="ax_shape">
+        <img id="u26_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u46" class="text">
+        <div id="u27" class="text">
           <p><span>French toast</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u47" class="ax_shape">
-        <img id="u47_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u28" class="ax_shape">
+        <img id="u28_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u48" class="text">
+        <div id="u29" class="text">
           <p><span>Duck</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u49" class="ax_shape">
-        <img id="u49_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u30" class="ax_shape">
+        <img id="u30_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u50" class="text">
+        <div id="u31" class="text">
           <p><span>Indian style</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u51" class="ax_shape">
-        <img id="u51_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u32" class="ax_shape">
+        <img id="u32_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u52" class="text">
+        <div id="u33" class="text">
           <p><span>Thai roasted duck</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u53" class="ax_shape">
-        <img id="u53_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u34" class="ax_shape">
+        <img id="u34_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u54" class="text">
+        <div id="u35" class="text">
           <p><span>Dessert</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u55" class="ax_shape">
-        <img id="u55_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u36" class="ax_shape">
+        <img id="u36_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u56" class="text">
+        <div id="u37" class="text">
           <p><span>Roasted Chicken</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u57" class="ax_h2">
-        <img id="u57_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u38" class="ax_h2">
+        <img id="u38_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u58" class="text">
+        <div id="u39" class="text">
           <p><span>Alternative</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u59" class="ax_shape">
-        <img id="u59_img" class="img " src="images/personal/u59.png"/>
+      <div id="u40" class="ax_shape">
+        <img id="u40_img" class="img " src="images/personal/u40.png"/>
         <!-- Unnamed () -->
-        <div id="u60" class="text">
+        <div id="u41" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u61" class="ax_h2">
-        <img id="u61_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u42" class="ax_h2">
+        <img id="u42_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u62" class="text">
+        <div id="u43" class="text">
           <p><span>Comment</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u63" class="ax_shape">
-        <img id="u63_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u44" class="ax_shape">
+        <img id="u44_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u64" class="text">
+        <div id="u45" class="text">
           <p><span>The mango curry is reaaaaaally yummy!! </span></p><p><span>&nbsp;</span></p><p><span>- Jun</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u65" class="ax_shape">
-        <img id="u65_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u46" class="ax_shape">
+        <img id="u46_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u66" class="text">
+        <div id="u47" class="text">
           <p><span>We enjoyed our dinner.</span></p><p><span>&nbsp;</span></p><p><span>- Lily</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u67" class="ax_shape">
-        <img id="u67_img" class="img " src="images/home/u48.png"/>
+      <div id="u48" class="ax_shape">
+        <img id="u48_img" class="img " src="images/home/u48.png"/>
         <!-- Unnamed () -->
-        <div id="u68" class="text">
+        <div id="u49" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u69" class="ax_shape">
-        <img id="u69_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u50" class="ax_shape">
+        <img id="u50_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u70" class="text">
+        <div id="u51" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u71" class="ax_shape">
-        <img id="u71_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u52" class="ax_shape">
+        <img id="u52_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u72" class="text">
+        <div id="u53" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u73" class="ax_shape">
-        <img id="u73_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u54" class="ax_shape">
+        <img id="u54_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u74" class="text">
+        <div id="u55" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u75" class="ax_paragraph">
-        <img id="u75_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u56" class="ax_paragraph">
+        <img id="u56_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u76" class="text">
+        <div id="u57" class="text">
           <p style="font-size:16px;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;font-size:16px;">Contact Us</span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:6px;">&nbsp;</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:12px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">1 (603) 123 - 1234</span></p><p style="font-size:12px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:3px;">&nbsp;</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;"></span></p><p style="font-size:12px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">admin@idish.com</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u77" class="ax_paragraph">
-        <img id="u77_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u58" class="ax_paragraph">
+        <img id="u58_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u78" class="text">
+        <div id="u59" class="text">
           <p style="font-size:16px;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;font-size:16px;">Privacy Policy</span></p><p style="font-size:6px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:6px;">&nbsp;</span></p><p style="font-size:12px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">Term Of Use</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u79" class="ax_paragraph">
-        <img id="u79_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u60" class="ax_paragraph">
+        <img id="u60_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u80" class="text">
-          <p style="font-size:16px;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;font-size:16px;">Others</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:6px;">&nbsp;</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">� 2017 Idish.com</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:3px;">&nbsp;</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:12px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">All Rights Reserved</span></p>
+        <div id="u61" class="text">
+          <p style="font-size:16px;"><span style="font-family:'Arial-BoldMT', 'Arial Bold', 'Arial';font-weight:700;font-size:16px;">Others</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:6px;">&nbsp;</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">© 2017 Idish.com</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:13px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:3px;">&nbsp;</span><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:13px;"></span></p><p style="font-size:12px;"><span style="font-family:'ArialMT', 'Arial';font-weight:400;font-size:12px;">All Rights Reserved</span></p>
         </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u62" class="ax_shape">
+        <img id="u62_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u63" class="text">
+          <p><span>Jun is satisfied.</span></p><p><span>&nbsp;</span></p><p><span>- Louis</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u64" class="ax_shape">
+        <img id="u64_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u65" class="text">
+          <p><span>....</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u66" class="ax_shape">
+        <img id="u66_img" class="img " src="images/personal/u66.png"/>
+        <!-- Unnamed () -->
+        <div id="u67" class="text">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u68" class="ax_h2">
+        <img id="u68_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u69" class="text">
+          <p><span>Recipes</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u70" class="ax_shape">
+        <img id="u70_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u71" class="text">
+          <p><span>French Toast</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u72" class="ax_shape">
+        <img id="u72_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u73" class="text">
+          <p><span>Steve's Waffle</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u74" class="ax_shape">
+        <img id="u74_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u75" class="text">
+          <p><span>Thai</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u76" class="ax_shape">
+        <img id="u76_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u77" class="text">
+          <p><span>Chinese</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (Shape) -->
+      <div id="u78" class="ax_shape">
+        <img id="u78_img" class="img " src="images/personal/u40.png"/>
+        <!-- Unnamed () -->
+        <div id="u79" class="text">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- recipeFrame (Inline Frame) -->
+      <div id="u80" class="ax_inline_frame" data-label="recipeFrame">
+        <iframe id="u80_input" data-label="recipeFrame" scrolling="auto" frameborder="0"></iframe>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -452,7 +420,7 @@
         <img id="u81_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u82" class="text">
-          <p><span>Jun is satisfied.</span></p><p><span>&nbsp;</span></p><p><span>- Louis</span></p>
+          <p><span>My Recipes</span></p>
         </div>
       </div>
 
@@ -461,70 +429,7 @@
         <img id="u83_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u84" class="text">
-          <p><span>....</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u85" class="ax_shape">
-        <img id="u85_img" class="img " src="images/personal/u85.png"/>
-        <!-- Unnamed () -->
-        <div id="u86" class="text">
-          <p><span></span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u87" class="ax_h2">
-        <img id="u87_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u88" class="text">
-          <p><span>Recipes</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u89" class="ax_shape">
-        <img id="u89_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u90" class="text">
-          <p><span>French Toast</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u91" class="ax_shape">
-        <img id="u91_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u92" class="text">
-          <p><span>Steve's Waffle</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u93" class="ax_shape">
-        <img id="u93_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u94" class="text">
-          <p><span>Thai</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u95" class="ax_shape">
-        <img id="u95_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u96" class="text">
-          <p><span>Chinese</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u97" class="ax_shape">
-        <img id="u97_img" class="img " src="images/personal/u59.png"/>
-        <!-- Unnamed () -->
-        <div id="u98" class="text">
-          <p><span></span></p>
+          <p><span>My Favorite</span></p>
         </div>
       </div>
     </div>
