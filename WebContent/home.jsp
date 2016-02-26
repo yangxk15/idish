@@ -70,9 +70,28 @@
 	    	  document.getElementById("u69_input").style.visibility = "visible";
 	    	  document.getElementById("u70_input").style.visibility = "visible";
         	  document.getElementById("u75_img").style.visibility = "hidden";
+        	  document.getElementById("pl").href = "javascript:void(0)";
+        	  document.getElementById("pl2").href = "javascript:void(0)";
 	      }
       }
     </script>
+    <style>
+		a:link {
+		    text-decoration: none;
+		}
+		
+		a:visited {
+		    text-decoration: none;
+		}
+		
+		a:hover {
+		    text-decoration: underline;
+		}
+		
+		a:active {
+		    text-decoration: underline;
+		}
+    </style>
   </head>
   <body onload="check()">
     <div id="base" class="">
@@ -109,7 +128,7 @@
         <img id="u6_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u7" class="text">
-          <p><span>${recipelist[0].description }</span></p>
+          <p><span><a href="recipe.jsp?id=0">${recipelist[0].description }</a></span></p>
         </div>
       </div>
 
@@ -118,7 +137,7 @@
         <img id="u8_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u9" class="text">
-          <p><span>${recipelist[0].name }</span></p>
+          <p><span><a href="recipe.jsp?id=0">${recipelist[0].name }</a></span></p>
         </div>
       </div>
 
@@ -136,7 +155,7 @@
         <img id="u12_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u13" class="text">
-          <p><span>${recipelist[1].description }</span></p>
+          <p><span><a href="recipe.jsp?id=1">${recipelist[1].description }</a></span></p>
         </div>
       </div>
 
@@ -145,7 +164,7 @@
         <img id="u14_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u15" class="text">
-          <p><span>${recipelist[1].name }</span></p>
+          <p><span><a href="recipe.jsp?id=1">${recipelist[1].name }</a></span></p>
         </div>
       </div>
 
@@ -181,7 +200,7 @@
         <img id="u22_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u23" class="text">
-          <p><span>${recipelist[2].description }</span></p>
+          <p><span><a href="recipe.jsp?id=2">${recipelist[2].description }</a></span></p>
         </div>
       </div>
 
@@ -190,7 +209,7 @@
         <img id="u24_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u25" class="text">
-          <p><span>${recipelist[2].name }</span></p>
+          <p><span><a href="recipe.jsp?id=2">${recipelist[2].name }</a></span></p>
         </div>
       </div>
 
@@ -208,7 +227,7 @@
         <img id="u28_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u29" class="text">
-          <p><span>${recipelist[3].description }</span></p>
+          <p><span><a href="recipe.jsp?id=3">${recipelist[3].description }</a></span></p>
         </div>
       </div>
 
@@ -217,7 +236,7 @@
         <img id="u30_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u31" class="text">
-          <p><span>${recipelist[3].name }</span></p>
+          <p><span><a href="recipe.jsp?id=3">${recipelist[3].name }</a></span></p>
         </div>
       </div>
 
@@ -253,7 +272,7 @@
         <img id="u38_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u39" class="text">
-          <p><span>${recipelist[4].description }</span></p>
+          <p><span><a href="recipe.jsp?id=4">${recipelist[4].description }</a></span></p>
         </div>
       </div>
 
@@ -262,7 +281,7 @@
         <img id="u40_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u41" class="text">
-          <p><span>${recipelist[4].name }</span></p>
+          <p><span><a href="recipe.jsp?id=4">${recipelist[4].name }</a></span></p>
         </div>
       </div>
 
@@ -280,7 +299,7 @@
         <img id="u44_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u45" class="text">
-          <p><span>${recipelist[5].description }</span></p>
+          <p><span><a href="recipe.jsp?id=5">${recipelist[5].description }</a></span></p>
         </div>
       </div>
 
@@ -289,7 +308,7 @@
         <img id="u46_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u47" class="text">
-          <p><span>${recipelist[5].name }</span></p>
+          <p><span><a href="recipe.jsp?id=5">${recipelist[5].name }</a></span></p>
         </div>
       </div>
 
@@ -415,13 +434,13 @@
         <img id="u73_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u74" class="text">
-          <p><span id="name">${sessionScope.user.realname}</span></p>
+          <p><span id="name"><a id="pl2" href="personal.jsp">${user.realname}</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
-      <div id="u75" class="ax_image" onclick="location.href='personal.jsp'">
-        <img id="u75_img" class="img " src="images/users/${user.userid}.png"/>
+      <div id="u75" class="ax_image">
+        <a id="pl" href="personal.jsp"><img id="u75_img" class="img " src="images/users/${user.userid}.png"/></a>
         <!-- Unnamed () -->
         <div id="u76" class="text">
           <p><span></span></p>

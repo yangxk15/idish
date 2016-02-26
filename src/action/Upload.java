@@ -3,6 +3,7 @@ package action;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.ServletException;
@@ -29,13 +30,13 @@ public class Upload extends HttpServlet{
 			response.sendRedirect("home.jsp");
 			return;
 		}
-		ArrayList<User> userlist = User.getUserlist();
-		ArrayList<Recipe> recipelist = Recipe.getRecipelist();
+		List<User> userlist = User.getUserlist();
+		List<Recipe> recipelist = Recipe.getRecipelist();
 		int id = recipelist.size();
 		userlist.get(user.getUserid()).getKitchen().add(id);
-		ArrayList<String> ingredients = new ArrayList<String> ();
-		ArrayList<String> ingredientsDes = new ArrayList<String> ();
-		ArrayList<String> steps = new ArrayList<String> ();
+		List<String> ingredients = new ArrayList<String> ();
+		List<String> ingredientsDes = new ArrayList<String> ();
+		List<String> steps = new ArrayList<String> ();
 		recipe.setRecipeid(id);
 		Random r = new Random();
 		recipe.setServe(String.valueOf(r.nextInt(10)));

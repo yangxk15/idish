@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
 
 import javax.servlet.ServletException;
@@ -19,11 +20,10 @@ public class Search extends HttpServlet{
 			throws ServletException, IOException {
 		String query = request.getParameter("query");
 		if (query == null) {
-			response.sendRedirect("home.jsp");
-			return;
+			query = "";
 		}
-		ArrayList<Recipe> recipelist = Recipe.getRecipelist();
-		ArrayList<Recipe> resultlist = new ArrayList<Recipe> ();
+		List<Recipe> recipelist = Recipe.getRecipelist();
+		List<Recipe> resultlist = new ArrayList<Recipe> ();
 		HashMap<Recipe, Double> tempmap = new HashMap<Recipe, Double> ();
 		for (Recipe recipe : recipelist) {
 			double score = 0.0;
@@ -56,6 +56,7 @@ public class Search extends HttpServlet{
 		for (Entry<Recipe, Double> e : list) {
 			resultlist.add(e.getKey());
 		}
+		request.setAttribute("query", query);
 		request.setAttribute("resultlist", resultlist);
 		request.getRequestDispatcher("search.jsp").forward(request, response);
 	}

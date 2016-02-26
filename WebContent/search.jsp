@@ -70,28 +70,53 @@
 	    	  document.getElementById("u9_input").style.visibility = "visible";
 	    	  document.getElementById("u10_input").style.visibility = "visible";
         	  document.getElementById("u15_img").style.visibility = "hidden";
+        	  document.getElementById("pl").href = "javascript:void(0)";
+        	  document.getElementById("pl2").href = "javascript:void(0)";
 	      }
 	      if ("${resultlist}" == "" || "${resultlist[0]}" == "") {
 	    	  document.getElementById("u61").style.visibility = "hidden";
 	    	  document.getElementById("first").innerHTML = "No result found."
+		      document.getElementById("a01").href = "javascript:void(0)";
 	      }
 	      if ("${resultlist[1]}" == "") {
 	    	  document.getElementById("u17").style.visibility = "hidden";
+		      document.getElementById("a11").href = "javascript:void(0)";
 	      }
 	      if ("${resultlist[2]}" == "") {
 	    	  document.getElementById("u19").style.visibility = "hidden";
+		      document.getElementById("a21").href = "javascript:void(0)";
 	      }
 	      if ("${resultlist[3]}" == "") {
 	    	  document.getElementById("u21").style.visibility = "hidden";
+		      document.getElementById("a31").href = "javascript:void(0)";
 	      }
 	      if ("${resultlist[4]}" == "") {
 	    	  document.getElementById("u67").style.visibility = "hidden";
+		      document.getElementById("a41").href = "javascript:void(0)";
 	      }
 	      if ("${resultlist[5]}" == "") {
 	    	  document.getElementById("u73").style.visibility = "hidden";
+		      document.getElementById("a51").href = "javascript:void(0)";
 	      }
       }
     </script>
+    <style>
+		a:link {
+		    text-decoration: none;
+		}
+		
+		a:visited {
+		    text-decoration: none;
+		}
+		
+		a:hover {
+		    text-decoration: underline;
+		}
+		
+		a:active {
+		    text-decoration: underline;
+		}
+    </style>
   </head>
   <body onload="check()">
     <div id="base" class="">
@@ -106,7 +131,7 @@
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u2" class="ax_shape">
+      <div id="u2" class="ax_shape" onclick="document.loginform.submit();" style="z-index:2">
         <img id="u2_img" class="img " src="images/home/u64.png"/>
         <!-- Unnamed () -->
         <div id="u3" class="text">
@@ -115,12 +140,15 @@
       </div>
 
       <!-- Unnamed (Text Field) -->
+      
+      <form name="search" action="search" method="post">
       <div id="u4" class="ax_text_field">
-        <input id="u4_input" type="text" value=""/>
+        <input name="query" id="u4_input" type="text" value="${query }" placeholder="Search here"/>
       </div>
+      </form>
 
       <!-- Unnamed (Image) -->
-      <div id="u5" class="ax_image">
+      <div id="u5" class="ax_image" onclick="document.search.submit()">
         <img id="u5_img" class="img " src="images/home/u79.png"/>
         <!-- Unnamed () -->
         <div id="u6" class="text">
@@ -137,15 +165,17 @@
         </div>
       </div>
 
+	  <form name="loginform" action="login" method="post">
       <!-- Unnamed (Text Field) -->
       <div id="u9" class="ax_text_field">
-        <input id="u9_input" type="text" value=""/>
+        <input id="u9_input" type="text" value="" name="username" placeholder="username"/>
       </div>
 
       <!-- Unnamed (Text Field) -->
       <div id="u10" class="ax_text_field">
-        <input id="u10_input" type="text" value=""/>
+        <input id="u10_input" type="password" value="" name="password" placeholder="password"/>
       </div>
+      </form>
 
       <!-- Unnamed (Shape) -->
       <div id="u11" class="ax_paragraph">
@@ -161,13 +191,13 @@
         <img id="u13_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u14" class="text">
-          <p><span>${user.realname }</span></p>
+          <p><span><a id="pl2" href="personal.jsp">${user.realname }</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
       <div id="u15" class="ax_image">
-        <img id="u15_img" class="img " src="images/users/${user.userid }.png"/>
+        <a id="pl" href="personal.jsp"><img id="u15_img" class="img " src="images/users/${user.userid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u16" class="text">
           <p><span></span></p>
@@ -176,7 +206,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u17" class="ax_image">
-        <img id="u17_img" class="img " src="images/recipes/${resultlist[1].recipeid }.png"/>
+        <a id="a11" href="recipe.jsp?id=${resultlist[1].recipeid }"><img id="u17_img" class="img " src="images/recipes/${resultlist[1].recipeid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u18" class="text">
           <p><span></span></p>
@@ -185,7 +215,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u19" class="ax_image">
-        <img id="u19_img" class="img " src="images/recipes/${resultlist[2].recipeid }.png"/>
+        <a id="a21" href="recipe.jsp?id=${resultlist[2].recipeid }"><img id="u19_img" class="img " src="images/recipes/${resultlist[2].recipeid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u20" class="text">
           <p><span></span></p>
@@ -194,7 +224,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u21" class="ax_image">
-        <img id="u21_img" class="img " src="images/recipes/${resultlist[3].recipeid }.png"/>
+        <a id="a31" href="recipe.jsp?id=${resultlist[3].recipeid }"><img id="u21_img" class="img " src="images/recipes/${resultlist[3].recipeid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u22" class="text">
           <p><span></span></p>
@@ -323,7 +353,7 @@
         <img id="u49_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u50" class="text">
-          <p><span>${resultlist[1].description }</span></p>
+          <p><span><a id="a12" href="recipe.jsp?id=${resultlist[1].recipeid }">${resultlist[1].description }</a></span></p>
         </div>
       </div>
 
@@ -332,7 +362,7 @@
         <img id="u51_img" class="img " src="images/search/u51.png"/>
         <!-- Unnamed () -->
         <div id="u52" class="text" style="width: 500px">
-          <p><span>${resultlist[1].name }</span></p>
+          <p><span><a id="a13" href="recipe.jsp?id=${resultlist[1].recipeid }">${resultlist[1].name }</a></span></p>
         </div>
       </div>
 
@@ -341,7 +371,7 @@
         <img id="u53_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u54" class="text">
-          <p><span>${resultlist[2].description }</span></p>
+          <p><span><a id="a22" href="recipe.jsp?id=${resultlist[2].recipeid }">${resultlist[2].description }</a></span></p>
         </div>
       </div>
 
@@ -350,7 +380,7 @@
         <img id="u55_img" class="img " src="images/search/u51.png"/>
         <!-- Unnamed () -->
         <div id="u56" class="text" style="width: 500px">
-          <p><span>${resultlist[2].name }</span></p>
+          <p><span><a id="a23" href="recipe.jsp?id=${resultlist[2].recipeid }">${resultlist[2].name }</a></span></p>
         </div>
       </div>
 
@@ -359,7 +389,7 @@
         <img id="u57_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u58" class="text">
-          <p><span>${resultlist[3].description }</span></p>
+          <p><span><a id="a32" href="recipe.jsp?id=${resultlist[3].recipeid }">${resultlist[3].description }</a></span></p>
         </div>
       </div>
 
@@ -368,13 +398,13 @@
         <img id="u59_img" class="img " src="images/search/u51.png"/>
         <!-- Unnamed () -->
         <div id="u60" class="text" style="width: 500px">
-          <p><span>${resultlist[3].name }</span></p>
+          <p><span><a id="a33" href="recipe.jsp?id=${resultlist[3].recipeid }">${resultlist[3].name }</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
       <div id="u61" class="ax_image">
-        <img id="u61_img" class="img " src="images/recipes/${resultlist[0].recipeid }.png"/>
+        <a id="a01" href="recipe.jsp?id=${resultlist[0].recipeid }"><img id="u61_img" class="img " src="images/recipes/${resultlist[0].recipeid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u62" class="text">
           <p><span></span></p>
@@ -386,7 +416,7 @@
         <img id="u63_img" class="img " src="images/search/u51.png"/>
         <!-- Unnamed () -->
         <div id="u64" class="text" style="width: 500px">
-          <p><span id="first">${resultlist[0].name }</span></p>
+          <p><span id="first"><a id="a02" href="recipe.jsp?id=${resultlist[0].recipeid }">${resultlist[0].name }</a></span></p>
         </div>
       </div>
 
@@ -395,13 +425,13 @@
         <img id="u65_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u66" class="text">
-          <p><span>${resultlist[0].description }</span></p>
+          <p><span><a id="a03" href="recipe.jsp?id=${resultlist[0].recipeid }">${resultlist[0].description }</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
       <div id="u67" class="ax_image">
-        <img id="u67_img" class="img " src="images/recipes/${resultlist[4].recipeid }.png"/>
+        <a id="a41" href="recipe.jsp?id=${resultlist[4].recipeid }"><img id="u67_img" class="img " src="images/recipes/${resultlist[4].recipeid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u68" class="text">
           <p><span></span></p>
@@ -413,7 +443,7 @@
         <img id="u69_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u70" class="text">
-          <p><span>${resultlist[4].description }</span></p>
+          <p><span><a id="a42" href="recipe.jsp?id=${resultlist[4].recipeid }">${resultlist[4].description }</a></span></p>
         </div>
       </div>
 
@@ -422,13 +452,13 @@
         <img id="u71_img" class="img " src="images/search/u51.png"/>
         <!-- Unnamed () -->
         <div id="u72" class="text" style="width: 500px">
-          <p><span>${resultlist[4].name }</span></p>
+          <p><span><a id="a43" href="recipe.jsp?id=${resultlist[4].recipeid }">${resultlist[4].name }</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
       <div id="u73" class="ax_image">
-        <img id="u73_img" class="img " src="images/recipes/${resultlist[5].recipeid }.png"/>
+        <a id="a51" href="recipe.jsp?id=${resultlist[5].recipeid }"><img id="u73_img" class="img " src="images/recipes/${resultlist[5].recipeid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u74" class="text">
           <p><span></span></p>
@@ -440,7 +470,7 @@
         <img id="u75_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u76" class="text">
-          <p><span>${resultlist[5].description }</span></p>
+          <p><span><a id="a52" href="recipe.jsp?id=${resultlist[5].recipeid }">${resultlist[5].description }</a></span></p>
         </div>
       </div>
 
@@ -449,13 +479,13 @@
         <img id="u77_img" class="img " src="images/search/u51.png"/>
         <!-- Unnamed () -->
         <div id="u78" class="text" style="width: 500px">
-          <p><span>${resultlist[5].name }</span></p>
+          <p><span><a id="a53" href="recipe.jsp?id=${resultlist[5].recipeid }">${resultlist[5].name }</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
       <div id="u79" class="ax_image">
-        <img id="u79_img" class="img " src="images/home/u77.png"/>
+        <a href="home.jsp"><img id="u79_img" class="img " src="images/home/u77.png"/></a>
         <!-- Unnamed () -->
         <div id="u80" class="text">
           <p><span></span></p>

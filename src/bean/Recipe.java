@@ -18,8 +18,8 @@ public class Recipe {
 	private List<String> ingredients;
 	private List<String> ingredientsDes;
 	private List<String> steps;
-	public static ArrayList<Recipe> getRecipelist() throws IOException {
-		ArrayList<Recipe> recipelist = new ArrayList<Recipe> ();
+	public static List<Recipe> getRecipelist() throws IOException {
+		List<Recipe> recipelist = new ArrayList<Recipe> ();
 		String line;
 		BufferedReader recipeinfo = new BufferedReader(new FileReader(new File("/Users/yangxk15/Desktop/recipe.txt")));
 		recipeinfo.readLine();
@@ -52,7 +52,7 @@ public class Recipe {
 		recipeinfo.close();
 		return recipelist;
 	}
-	public static void setRecipelist(ArrayList<Recipe> recipelist) throws IOException {
+	public static void setRecipelist(List<Recipe> recipelist) throws IOException {
 		BufferedWriter recipeinfo = new BufferedWriter(new FileWriter(new File("/Users/yangxk15/Desktop/recipe.txt")));
 		recipeinfo.write("Recipe Information");
 		for (Recipe recipe : recipelist) {

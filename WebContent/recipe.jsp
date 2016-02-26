@@ -1,7 +1,9 @@
 <!DOCTYPE html>
+<%@ page import="bean.User" %>
 <html>
   <head>
     <title>RECIPE</title>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -44,6 +46,7 @@
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+      var ifFav = 0;
       function check() {
     	  var userlist = "${sessionScope.userlist}"
     	  if (userlist == "") {
@@ -60,7 +63,13 @@
 	    	  document.getElementById("u102_input").style.visibility = "hidden";
 	    	  document.getElementById("u103_input").style.visibility = "hidden";
         	  document.getElementById("u108_img").style.visibility = "visible";
-    	      document.getElementById("u108_img").src = "images/users/" + "${user.userid}" + ".png";
+        	  <%
+        	  User user = (User) session.getAttribute("user");
+        	  if (user != null && user.getFavorite().contains(Integer.valueOf(request.getParameter("id")))) {%>
+        	      document.getElementById("u8").style.opacity = "0.75";
+	        	  document.getElementById("u9").innerHTML = "Favorited";
+	        	  ifFav = 1;
+	    	  <%}%>
 	      }
 	      else {
 		      var login = "${requestScope.login}";
@@ -70,14 +79,65 @@
 	    	  document.getElementById("u95").style.visibility = "visible";
 	    	  document.getElementById("u102_input").style.visibility = "visible";
 	    	  document.getElementById("u103_input").style.visibility = "visible";
-        	  document.getElementById("u108_img").style.visibility = "hidden"; 
+        	  document.getElementById("u108_img").style.visibility = "hidden";
+        	  document.getElementById("pl").href = "javascript:void(0)";
+        	  document.getElementById("pl2").href = "javascript:void(0)";
 	      }
 	      document.getElementById("u2_img").src = "images/recipes/" + "${recipelist[param.id].recipeid}" + ".png";
 	      document.getElementById("u10_img").src = "images/recipes/" + "${recipelist[param.id].recipeid}" + "-1.png";
 	      document.getElementById("u41_img").src = "images/recipes/" + "${recipelist[param.id].recipeid}" + "-2.png";
 	      document.getElementById("u45_img").src = "images/recipes/" + "${recipelist[param.id].recipeid}" + "-3.png";
       }
+      function over() {
+    	  if (ifFav == 0) {
+    	      document.getElementById("u8").style.opacity = "0.75";
+        	  document.getElementById("u9").innerHTML = "Favor it!";
+    	  }
+    	  else {
+    	      document.getElementById("u8").style.opacity = "1";
+        	  document.getElementById("u9").innerHTML = "Cancel";
+    	  }
+      }
+      function out() {
+    	  if (ifFav == 0) {
+    	      document.getElementById("u8").style.opacity = "1";
+        	  document.getElementById("u9").innerHTML = "Favorite";
+    	  }
+    	  else {
+    	      document.getElementById("u8").style.opacity = "0.75";
+        	  document.getElementById("u9").innerHTML = "Favorited";
+    	  }
+      }
+      function favor() {
+    	  var user = "${sessionScope.user}";
+    	  if (user == "") {
+    		  alert("Login first!");
+    		  return;
+    	  }
+    	  var tmp = document.createElement("form");
+    	  tmp.action = "favor?id=" + "${param.id}";
+    	  tmp.method = "post";
+    	  document.body.appendChild(tmp);
+    	  tmp.submit();
+      }
     </script>
+    <style>
+		a:link {
+		    text-decoration: none;
+		}
+		
+		a:visited {
+		    text-decoration: none;
+		}
+		
+		a:hover {
+		    text-decoration: underline;
+		}
+		
+		a:active {
+		    text-decoration: underline;
+		}
+    </style>
   </head>
   <body onload="check()">
     <div id="base" class="">
@@ -93,7 +153,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u2" class="ax_image">
-        <img id="u2_img" class="img " src="images/recipe/u2.png"/>
+        <img id="u2_img" class="img " src="images/recipes/${recipelist[param.id].recipeid }.png"/>
         <!-- Unnamed () -->
         <div id="u3" class="text">
           <p><span></span></p>
@@ -119,7 +179,7 @@
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u8" class="ax_shape">
+      <div id="u8" class="ax_shape" onmouseover="over()" onmouseout="out()" onclick="favor()">
         <img id="u8_img" class="img " src="images/recipe/u8.png"/>
         <!-- Unnamed () -->
         <div id="u9" class="text">
@@ -524,9 +584,11 @@
       </div>
 
       <!-- Unnamed (Text Field) -->
+      <form name="search" action="search" method="post">
       <div id="u97" class="ax_text_field">
-        <input id="u97_input" type="text" value=""/>
+        <input name="query" id="u97_input" type="text" value="" placeholder="Search here"/>
       </div>
+      </form>
 
       <!-- Unnamed (Image) -->
       <div id="u98" class="ax_image">
@@ -571,13 +633,13 @@
         <img id="u106_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u107" class="text">
-          <p><span id="name">${sessionScope.user.realname}</span></p>
+          <p><span id="name"><a id="pl2" href="personal.jsp">${user.realname}</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Image) -->
       <div id="u108" class="ax_image" onclick="location.href='personal.jsp'">
-        <img id="u108_img" class="img " src="images/home/u75.png"/>
+        <a id="pl" href="personal.jsp"><img id="u108_img" class="img " src="images/users/${user.userid}.png"/></a>
         <!-- Unnamed () -->
         <div id="u109" class="text">
           <p><span></span></p>
@@ -585,7 +647,7 @@
       </div>
 
       <!-- Unnamed (Image) -->
-      <div id="u110" class="ax_image">
+      <div id="u110" class="ax_image" onclick="document.search.submit()">
         <img id="u110_img" class="img " src="images/home/u79.png"/>
         <!-- Unnamed () -->
         <div id="u111" class="text">

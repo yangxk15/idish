@@ -15,8 +15,9 @@ public class User {
 	private String username;
 	private String password;
 	private List<Integer> kitchen;
-	public static ArrayList<User> getUserlist() throws IOException {
-		ArrayList<User> userlist = new ArrayList<User> ();
+	private List<Integer> favorite;
+	public static List<User> getUserlist() throws IOException {
+		List<User> userlist = new ArrayList<User> ();
 		String line;
 		BufferedReader userinfo = new BufferedReader(new FileReader(new File("/Users/yangxk15/Desktop/user.txt")));
 		userinfo.readLine();
@@ -33,13 +34,20 @@ public class User {
 				kitchen.add(Integer.valueOf(s));
 			}
 			user.setKitchen(kitchen);
-			user.setUserid(Integer.valueOf(list[4]));
+			List<Integer> favorite = new ArrayList<Integer> ();
+			for (String s : list[4].split(" ")) {
+				if (s.length() == 0)
+					break;
+				favorite.add(Integer.valueOf(s));
+			}
+			user.setFavorite(favorite);
+			user.setUserid(Integer.valueOf(list[5]));
 			userlist.add(user);
 		}
         userinfo.close();
         return userlist;
 	}
-	public static void setUserlist(ArrayList<User> userlist) throws IOException {
+	public static void setUserlist(List<User> userlist) throws IOException {
 		BufferedWriter userinfo = new BufferedWriter(new FileWriter(new File("/Users/yangxk15/Desktop/user.txt")));
 		userinfo.write("RealName,UserName,PassWord,Picture,Kitchen,Userid");
 		for (User user : userlist) {
@@ -48,10 +56,15 @@ public class User {
 			for (int i = 0; i < list.length; i++) {
 				list[i] = String.valueOf(user.getKitchen().get(i));
 			}
+			String[] list2 = new String[user.getFavorite().size()];
+			for (int i = 0; i < list2.length; i++) {
+				list2[i] = String.valueOf(user.getFavorite().get(i));
+			}
 			userinfo.write(user.getRealname()
 					+ "," + user.getUsername()
 					+ "," + user.getPassword()
 					+ "," + (list.length == 0 ? "" : String.join(" ", list))
+					+ "," + (list2.length == 0 ? "" : String.join(" ", list2))
 					+ "," + String.valueOf(user.getUserid()));
 		}
         userinfo.close();
@@ -85,5 +98,11 @@ public class User {
 	}
 	public void setRealname(String realname) {
 		this.realname = realname;
+	}
+	public List<Integer> getFavorite() {
+		return favorite;
+	}
+	public void setFavorite(List<Integer> favorite) {
+		this.favorite = favorite;
 	}
 }

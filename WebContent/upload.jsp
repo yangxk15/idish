@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UPLOAD</title>
+    <title>Upload</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
     <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
     <link href="data/styles.css" type="text/css" rel="stylesheet"/>
-    <link href="files/upload/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/upload_1/styles.css" type="text/css" rel="stylesheet"/>
     <script src="resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
     <script src="resources/scripts/axure/axQuery.js"></script>
@@ -37,7 +37,7 @@
     <script src="resources/scripts/axure/adaptive.js"></script>
     <script src="resources/scripts/axure/tree.js"></script>
     <script src="resources/scripts/axure/init.temp.js"></script>
-    <script src="files/upload/data.js"></script>
+    <script src="files/upload_1/data.js"></script>
     <script src="resources/scripts/axure/legacy.js"></script>
     <script src="resources/scripts/axure/viewer.js"></script>
     <script type="text/javascript">
@@ -56,8 +56,32 @@
     	  document.uploadform.submit();
       }
     </script>
+    <style>
+		a:link {
+		    text-decoration: none;
+		}
+		
+		a:visited {
+		    text-decoration: none;
+		}
+		
+		a:hover {
+		    text-decoration: underline;
+		}
+		
+		a:active {
+		    text-decoration: underline;
+		}
+    </style>
   </head>
   <body onload="check()">
+
+      <form action="search" name="searchform" method="post">
+	      <div id="u16" class="ax_text_field">
+	        <input id="u16_input" name="query" type="text" value="" placeholder="Search here"/>
+	      </div>
+      </form>
+      
     <form name="uploadform" action="upload" method="post" enctype="multipart/form-data">
     <div id="base" class="">
 
@@ -133,14 +157,11 @@
         </div>
       </div>
 
-      <!-- Unnamed (Text Field) -->
-      <div id="u16" class="ax_text_field">
-        <input id="u16_input" type="text" value=""/>
-      </div>
+      
 
       <!-- Unnamed (Image) -->
       <div id="u17" class="ax_image">
-        <img id="u17_img" class="img " src="images/users/${user.userid }.png"/>
+        <a href="personal.jsp"><img id="u17_img" class="img " src="images/users/${user.userid }.png"/></a>
         <!-- Unnamed () -->
         <div id="u18" class="text">
           <p><span></span></p>
@@ -176,7 +197,7 @@
 
       <!-- Unnamed (Shape) -->
       <div id="u25" class="ax_shape">
-        <img id="u25_img" class="img " src="images/upload/u25.png"/>
+        <img id="u25_img" class="img " src="images/upload_1/u25.png"/>
         <!-- Unnamed () -->
         <div id="u26" class="text">
           <p><span></span></p>
@@ -185,159 +206,158 @@
 
       <!-- Unnamed (Text Field) -->
       <div id="u27" class="ax_text_field">
-        <textarea id="u27_input" name="D" style="border-color: rgb(220,220,220)"></textarea>
-      </div>
-
-      <!-- Unnamed (Text Field) -->
-      <div id="u28" class="ax_text_field">
-        <input id="u28_input" name="n" type="text" value=""/>
+        <input id="u27_input" name="n" type="text" value=""/>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u29" class="ax_paragraph">
-        <img id="u29_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u28" class="ax_paragraph">
+        <img id="u28_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u30" class="text">
+        <div id="u29" class="text">
           <p><span>Add the name of recipe:</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u31" class="ax_shape">
-        <img id="u31_img" class="img " src="images/recipe/u8.png"/>
+      <div id="u30" class="ax_shape" onclick="">
+        <a href="personal.jsp"><img id="u30_img" class="img " src="images/recipe/u8.png"/></a>
         <!-- Unnamed () -->
-        <div id="u32" class="text">
-          <p><span>CANCEL</span></p>
+        <div id="u31" class="text">
+          <p><span><a href="personal.jsp">CANCEL</a></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u33" class="ax_shape">
-        <img id="u33_img" class="img " src="images/upload/u25.png"/>
+      <div id="u32" class="ax_shape">
+        <img id="u32_img" class="img " src="images/upload_1/u25.png"/>
         <!-- Unnamed () -->
-        <div id="u34" class="text">
+        <div id="u33" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u35" class="ax_paragraph">
-        <img id="u35_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u34" class="ax_paragraph">
+        <img id="u34_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u36" class="text">
+        <div id="u35" class="text">
           <p><span>Add the brief:</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u37" class="ax_shape">
-        <img id="u37_img" class="img " src="images/upload/u25.png"/>
+      <div id="u36" class="ax_shape">
+        <img id="u36_img" class="img " src="images/upload_1/u25.png"/>
         <!-- Unnamed () -->
-        <div id="u38" class="text">
+        <div id="u37" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u39" class="ax_shape">
-        <img id="u39_img" class="img " src="images/upload/u25.png"/>
+      <div id="u38" class="ax_shape">
+        <img id="u38_img" class="img " src="images/upload_1/u25.png"/>
         <!-- Unnamed () -->
-        <div id="u40" class="text">
+        <div id="u39" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u41" class="ax_paragraph">
-        <img id="u41_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u40" class="ax_paragraph">
+        <img id="u40_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u42" class="text">
+        <div id="u41" class="text">
           <p><span>Add the picture:</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u43" class="ax_shape">
-        <img id="u43_img" class="img " src="images/upload/u43.png"/>
+      <div id="u42" class="ax_shape">
+        <img id="u42_img" class="img " src="images/upload_1/u42.png"/>
         <!-- Unnamed () -->
-        <div id="u44" class="text">
+        <div id="u43" class="text">
           <p><span></span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <input name="p" id="u45" class="text" type="file" style="width: 160px"/>
+      <input name="p" id="u44" class="text" type="file" style="width: 160px"/>
 
       <!-- Unnamed (Table) -->
-      <div id="u47" class="ax_table">
+      <div id="u46" class="ax_table">
 
         <!-- Unnamed (Table Cell) -->
-        <div id="u48" class="ax_table_cell">
-          <img id="u48_img" class="img " src="images/upload/u48.png"/>
+        <div id="u47" class="ax_table_cell">
+          <img id="u47_img" class="img " src="images/upload_1/u47.png"/>
           <!-- Unnamed () -->
-          <div id="u49" class="text">
+          <div id="u48" class="text">
             <p><span>Ingredient</span></p>
           </div>
         </div>
 
         <!-- Unnamed (Table Cell) -->
-        <div id="u50" class="ax_table_cell">
-          <img id="u50_img" class="img " src="images/upload/u50.png"/>
+        <div id="u49" class="ax_table_cell">
+          <img id="u49_img" class="img " src="images/upload_1/u49.png"/>
           <!-- Unnamed () -->
-          <div id="u51" class="text">
+          <div id="u50" class="text">
             <p><span>Amount</span></p>
           </div>
         </div>
 
         <!-- Unnamed (Table Cell) -->
-        <div id="u52" class="ax_table_cell">
-          <img id="u52_img" class="img " src="images/upload/u52.png"/>
+        <div id="u51" class="ax_table_cell">
+          <img id="u51_img" class="img " src="images/upload_1/u51.png"/>
           <!-- Unnamed () -->
-          <div id="u53" class="text">
+          <div id="u52" class="text">
             <p><span>Ingredient</span></p>
           </div>
         </div>
 
         <!-- Unnamed (Table Cell) -->
-        <div id="u54" class="ax_table_cell">
-          <img id="u54_img" class="img " src="images/upload/u54.png"/>
+        <div id="u53" class="ax_table_cell">
+          <img id="u53_img" class="img " src="images/upload_1/u53.png"/>
           <!-- Unnamed () -->
-          <div id="u55" class="text">
+          <div id="u54" class="text">
             <p><span>Amount</span></p>
           </div>
         </div>
-		<input id="u56" name="i1" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-		<input id="u58" name="d1" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-		<input id="u60" name="i2" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-		<input id="u62" name="d2" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u55" name="i1" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u57" name="d1" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u59" name="i2" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u61" name="d2" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
 		
-		<input id="u64" name="i3" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-		<input id="u66" name="d3" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-		<input id="u68" name="i4" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-		<input id="u70" name="d4" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
-        
+		<input id="u63" name="i3" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u65" name="d3" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u67" name="i4" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+		<input id="u69" name="d4" class="ax_table_cell" type="text" value="" style="visibility: visible; text-align: left"/>
+
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u80" class="ax_paragraph">
-        <img id="u80_img" class="img " src="resources/images/transparent.gif"/>
+      <div id="u79" class="ax_paragraph">
+        <img id="u79_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
-        <div id="u81" class="text">
+        <div id="u80" class="text">
           <p><span>Add the ingredients:</span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Text Field) -->
-      <div id="u82" class="ax_text_field">
-        <textarea id="u82_input" name="s1" style="border-color: rgb(220,220,220)"></textarea>
+      <!-- Unnamed (Shape) -->
+      <div id="u81" class="ax_shape">
+        <img id="u81_img" class="img " src="images/upload_1/u25.png"/>
+        <!-- Unnamed () -->
+        <div id="u82" class="text">
+          <p><span></span></p>
+        </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u83" class="ax_shape">
-        <img id="u83_img" class="img " src="images/upload/u25.png"/>
+      <div id="u83" class="ax_paragraph">
+        <img id="u83_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u84" class="text">
-          <p><span></span></p>
+          <p><span>Add Steps:</span></p>
         </div>
       </div>
 
@@ -346,18 +366,17 @@
         <img id="u85_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u86" class="text">
-          <p><span>Add Steps:</span></p>
+          <p><span>Step 1:</span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Text Field) -->
-      <div id="u87" class="ax_text_field">
-        <textarea id="u87_input" name="s2" style="border-color: rgb(220,220,220)"></textarea>
-      </div>
-
-      <!-- Unnamed (Text Field) -->
-      <div id="u88" class="ax_text_field">
-        <textarea id="u88_input" name="s3" style="border-color: rgb(220,220,220)"></textarea>
+      <!-- Unnamed (Shape) -->
+      <div id="u87" class="ax_paragraph">
+        <img id="u87_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u88" class="text">
+          <p><span>Step 2:</span></p>
+        </div>
       </div>
 
       <!-- Unnamed (Shape) -->
@@ -365,16 +384,16 @@
         <img id="u89_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u90" class="text">
-          <p><span>Step 1:</span></p>
+          <p><span>Step 3:</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u91" class="ax_paragraph">
+      <div id="u91" class="ax_h2">
         <img id="u91_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u92" class="text">
-          <p><span>Step 2:</span></p>
+          <p><span>Tips</span></p>
         </div>
       </div>
 
@@ -383,16 +402,16 @@
         <img id="u93_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u94" class="text">
-          <p><span>Step 3:</span></p>
+          <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum.</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u95" class="ax_h2">
+      <div id="u95" class="ax_paragraph">
         <img id="u95_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u96" class="text">
-          <p><span>Tips</span></p>
+          <p style="font-size:28px;"><span style="font-size:28px;">2.4k</span></p><p style="font-size:10px;"><span style="font-size:10px;">FOLLOWER</span></p>
         </div>
       </div>
 
@@ -401,39 +420,33 @@
         <img id="u97_img" class="img " src="resources/images/transparent.gif"/>
         <!-- Unnamed () -->
         <div id="u98" class="text">
-          <p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum.</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u99" class="ax_paragraph">
-        <img id="u99_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u100" class="text">
-          <p style="font-size:28px;"><span style="font-size:28px;">2.4k</span></p><p style="font-size:10px;"><span style="font-size:10px;">FOLLOWER</span></p>
-        </div>
-      </div>
-
-      <!-- Unnamed (Shape) -->
-      <div id="u101" class="ax_paragraph">
-        <img id="u101_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u102" class="text">
           <p style="font-size:28px;"><span style="font-size:28px;">75</span></p><p style="font-size:10px;"><span style="font-size:10px;">RECIPES</span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Shape) -->
-      
-      <input id="u103" name="sp1" class="text" type="file" style="width: 160px"/>
+      <input id="u99" name="sp1" class="text" type="file" style="width: 160px"/>
+      <input id="u101" name="sp2" class="text" type="file" style="width: 160px"/>
+      <input id="u103" name="sp3" class="text" type="file" style="width: 160px"/>
 
-      <!-- Unnamed (Shape) -->
-      
-      <input id="u105" name="sp2" class="text" type="file" style="width: 160px"/>
+      <!-- Unnamed (Text Area) -->
+      <div id="u105" class="ax_text_area">
+        <textarea id="u105_input" name="D" style="border-color: rgb(220,220,220)"></textarea>
+      </div>
 
-      <!-- Unnamed (Shape) -->
-      <input id="u107" name="sp3" class="text" type="file" style="width: 160px"/>
-      
+      <!-- Unnamed (Text Area) -->
+      <div id="u106" class="ax_text_area">
+        <textarea id="u106_input" name="s1" style="border-color: rgb(220,220,220)"></textarea>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u107" class="ax_text_area">
+        <textarea id="u107_input" name="s2" style="border-color: rgb(220,220,220)"></textarea>
+      </div>
+
+      <!-- Unnamed (Text Area) -->
+      <div id="u108" class="ax_text_area">
+        <textarea id="u108_input" name="s3" style="border-color: rgb(220,220,220)"></textarea>
+      </div>
     </div>
     </form>
   </body>

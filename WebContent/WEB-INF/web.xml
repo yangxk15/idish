@@ -41,4 +41,13 @@
   <url-pattern>/search</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+  <servlet-name>Favor</servlet-name>
+  <servlet-class>action.Favor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Favor</servlet-name>
+  <url-pattern>/favor</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

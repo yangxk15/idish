@@ -1,0 +1,6 @@
+RealName,UserName,PassWord,Picture,Kitchen,Userid
+Jun Gong,jun,jun,6 7 9 10,6 10,0
+Xiankai Yang,xiankai,xiankai,0,,1
+Xiaoting Zou,xiaoting,xiaoting,1 2,,2
+Huimin Zhou,huimin,huimin,3 4 5 8,,3
+Jianfa,jianfa,jianfa,,1 5,4
